@@ -9,15 +9,15 @@ const posts = {
 
         comments: [{
             author: "albert",
-            dateModified: Date.now(),
+            dateModified: 1489563217383,
             description: "iets"
         }]
     },
     "23443j23h2": {
         _id: "23443j23h2",
-        title: "mooie ding",
+        title: "JA!",
         description: "# klant \n - ik ben een klant \n - ik wil kaas",
-        dateModified: Date.now(),
+        dateModified: 1489663207383,
         author: "frank",
         likes: 0,
 

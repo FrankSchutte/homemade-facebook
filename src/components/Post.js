@@ -12,6 +12,7 @@ class Post extends Component {
             comments: this.props.data.comments,
             likes: this.props.data.likes
         };
+        this.state.color = 'hsla(' + (Math.random() * 360) + ', 50%, 50%, .5)';
     }
 
     handleNewComment = comment => {
@@ -31,10 +32,10 @@ class Post extends Component {
 
     render() {
         const {_id, title, description, author, dateModified} = this.props.data;
-        const {comments, likes} = this.state;
+        const {comments, likes, color} = this.state;
 
         return (
-            <div className="post" id={_id}>
+            <div className="post" id={_id} style={{"background-color": color}}>
                 <h2 className="title">{title}</h2>
                 <Markdown data={description}/>
                 <div className="meta">

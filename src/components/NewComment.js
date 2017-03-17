@@ -16,6 +16,7 @@ class NewComment extends Component {
         return (
             <form className="newComment" onSubmit={this.handleSubmit}>
                 <label>
+                    <span>comment:</span>
                     <textarea name="comment"/>
                 </label>
                 <input type="submit" value="Submit" />

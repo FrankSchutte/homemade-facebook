@@ -10,8 +10,8 @@ class Comment extends Component {
             <div className="comment">
                 <p>{description}</p>
                 <div className="meta">
-                    <span className="author">{author}</span>
-                    <span className="dateModified">{formatDateTime(dateModified)}</span>
+                    <span className="author">By: {author}</span>
+                    <span className="dateModified">On: {formatDateTime(dateModified)}</span>
                 </div>
             </div>
         )

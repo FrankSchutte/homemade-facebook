@@ -1,5 +1,6 @@
-.comments {
-  border-left: 1px solid black;
-  padding: 8px;
-  margin: 8px;
+.newComment {
+  textarea {
+    width: 100%;
+    max-width: 100%;
+  }
 }
