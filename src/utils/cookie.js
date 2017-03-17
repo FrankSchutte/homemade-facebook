@@ -18,3 +18,7 @@ function getCookieExp() {
   d.setTime(d.getTime() + (3600 * 60 * 1000));
   return d;
 }
+
+export const removeCookie = (name) => {
+  cookie.remove(name);
+};
