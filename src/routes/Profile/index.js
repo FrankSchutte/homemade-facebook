@@ -4,18 +4,16 @@ import Footer from "../../components/Footer";
 import Content from "../../components/Content";
 import "./style.css";
 
-class Dashboard extends Component {
+class Profile extends Component {
     render() {
         return (
             <div>
                 <Header />
-                <Content className="page-dashboard">
-                    <h1>DASHBOARD</h1>
-                </Content>
+                <Content><h1>{this.props.params.user}</h1></Content>
                 <Footer />
             </div>
         );
     }
 }
 
-export default Dashboard;
+export default Profile;
