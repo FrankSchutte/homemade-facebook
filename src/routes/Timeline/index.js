@@ -14,7 +14,8 @@ class Timeline extends Component {
     constructor(props) {
         super(props);
         if (!getCookie("loggedIn")) {
-            history.push("/login")
+            history.push("/login");
+            return;
         }
 
         this.state = {
@@ -39,7 +40,8 @@ class Timeline extends Component {
         return (
             <div>
                 <Header>
-                    <Nav active to={"/profile/" + getCookie("loggedIn")}>Profile</Nav>
+                    <Nav active to="/">Timeline</Nav>
+                    <Nav to={"/profile/" + getCookie("loggedIn")}>Profile</Nav>
                     <Nav to="/logout">Logout</Nav>
                     <Nav to="/add">Add Post</Nav>
                 </Header>

@@ -3,17 +3,20 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Content from "../../components/Content";
 import Post from "../../components/Post"
-import { posts } from "../../store";
-import { getCookie } from "../../utils/cookie";
+import {posts} from "../../store";
+import {getCookie} from "../../utils/cookie";
 import "./style.css";
 import "../Timeline/style.css";
+import Nav from "../../components/Nav";
 
 class Profile extends Component {
     constructor(props) {
         super(props);
         if (!getCookie("loggedIn")) {
-            history.push("/login")
+            history.push("/login");
+            return;
         }
+
         const filteredPosts = {};
         const user = this.props.params.user;
         Object.keys(posts).forEach(_id => {
@@ -34,7 +37,12 @@ class Profile extends Component {
         const postIds = Object.keys(posts);
         return (
             <div>
-                <Header />
+                <Header>
+                    <Nav to="/">Timeline</Nav>
+                    <Nav active to={"/profile/" + getCookie("loggedIn")}>Profile</Nav>
+                    <Nav to="/logout">Logout</Nav>
+                    <Nav to="/add">Add Post</Nav>
+                </Header>
                 <Content className="page-page_timeline">
                     <h1>Profile</h1>
                     <form onSubmit={this.filterPosts}>

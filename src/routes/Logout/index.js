@@ -4,6 +4,7 @@ import "./style.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Content from "../../components/Content";
+import Nav from "../../components/Nav";
 
 class Logout extends Component {
     constructor(props) {
@@ -14,7 +15,10 @@ class Logout extends Component {
     render() {
         return (
             <div>
-                <Header />
+                <Header>
+                    <Nav active to="/logout">Logout</Nav>
+                    <Nav to="/login">Login</Nav>
+                </Header>
                 <Content>
                 <span>U bent uitgelogd.</span>
                 </Content>
