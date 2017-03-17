@@ -26,6 +26,20 @@ const posts = {
             dateModified: Date.now(),
             description: "iets"
         }]
+    },
+    "23443j23hkj2": {
+        _id: "23443j23hkj2",
+        title: "NEE!",
+        description: "# klant \n - ik ben een klant \n - ik wil kaas",
+        dateModified: 1489663207383,
+        author: "HENK",
+        likes: 0,
+
+        comments: [{
+            author: "albert",
+            dateModified: Date.now(),
+            description: "iets"
+        }]
     }
 };
 
