@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import Header from "../../components/pure/Header";
-import Footer from "../../components/pure/Footer";
-import Content from "../../components/pure/Content";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import Content from "../../components/Content";
 import "./style.css";
 
 class NotFound extends Component {

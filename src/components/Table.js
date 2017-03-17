@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import "./Array.css";
+import "./Table.css";
 
-class Array extends Component {
+class Table extends Component {
     constructor(props) {
         super(props);
 
@@ -79,4 +79,4 @@ class Array extends Component {
     }
 }
 
-export default Array;
+export default Table;
