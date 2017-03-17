@@ -1,0 +1,63 @@
+.post {
+  box-shadow: 0 5px 20px -5px black;
+  padding: 8px;
+  margin: 16px 0;
+  transition: box-shadow .25s;
+
+  &:hover {
+    box-shadow: 0 5px 20px 0 black;
+  }
+
+  > .title {
+    margin: 0;
+    border-bottom: 1px dashed black;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  > .meta {
+    border-top: 1px dashed black;
+    padding-top: 8px;
+
+    .author {
+      display: block;
+      color: #444444;
+    }
+
+    .dateModified {
+      display: block;
+      color: #444444;
+    }
+
+    .likes {
+      display: block;
+      text-align: right;
+    }
+  }
+
+  .marked {
+    h1 {
+      font-size: 22px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+
+    h4 {
+      font-size: 16px;
+    }
+
+    h5 {
+      font-size: 14px;
+    }
+
+    h6 {
+      font-size: 12px;
+    }
+  }
+}

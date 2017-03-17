@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import {Router, Route} from "react-router";
 import routes from "./routes";
 import history from "./utils/history";
+import "./styles.css";
 
 ReactDOM.render(
     <Router history={history} onUpdate={() => window.scrollTo(0, 0)}>

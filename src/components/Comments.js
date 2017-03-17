@@ -1,19 +1,17 @@
 import React, {Component} from "react";
-import {formatDateTime} from "../utils/date";
+import Comment from "./Comment";
+import NewComment from "./NewComment";
+import "./Comments.css";
 
 class Comments extends Component {
     render() {
         const comments = this.props.data;
-
         return (
             <div className="comments">
                 {
-                    comments.map(comment => <div key={comment.author + comment.dateModified}>
-                        <span className="author">{comment.author}</span>
-                        <p>{comment.description}</p>
-                        <span className="dateModified">{formatDateTime(comment.dateModified)}</span>
-                    </div>)
+                    comments.map(comment => <Comment key={comment.author + "-" + comment.dateModified} data={comment}/>)
                 }
+                {this.props.handleNewComment ? <NewComment onSubmit={this.props.handleNewComment} /> : ""}
             </div>
         )
     }
