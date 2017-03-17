@@ -1,0 +1,94 @@
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font: 16px/1 sans-serif;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  background-color: #626262;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  min-height: 100%;
+  width: auto;
+}
+
+.container {
+  padding: 0 16px;
+  height: 100%;
+}
+
+table {
+  padding: 16px;
+
+  thead {
+    font-weight: 700;
+    background-color: #444;
+    color: white;
+
+    td {
+      padding: 8px;
+    }
+  }
+
+  tbody {
+    tr {
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    tr:nth-child(even) {
+      background: #DDD;
+    }
+    tr:nth-child(odd) {
+      background: #FFF;
+    }
+
+    td {
+      padding: 8px;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.button {
+  padding: 1px 6px;
+  align-items: flex-start;
+  cursor: default;
+  background-color: buttonface;
+  box-sizing: border-box;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonface;
+  border-image: initial;
+  text-rendering: auto;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  margin: 0em 0em 0em 0em;
+  font: 13.3333px Arial;
+  -webkit-writing-mode: horizontal-tb;
+  -webkit-appearance: button;
+}
