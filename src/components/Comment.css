@@ -1,0 +1,9 @@
+.comment {
+  border-bottom: 1px solid black;
+  padding-bottom: 8px; }
+  .comment .meta .author {
+    display: block;
+    color: #444444; }
+  .comment .meta .dateModified {
+    display: block;
+    color: #444444; }

@@ -1,0 +1,36 @@
+.post {
+  box-shadow: 0 5px 20px -5px #444444;
+  padding: 16px;
+  margin: 32px 0;
+  transition: box-shadow .25s; }
+  .post:hover {
+    box-shadow: 0 5px 20px 0 #444444; }
+  .post > .title {
+    margin: 0;
+    border-bottom: 1px dashed black;
+    padding-bottom: 8px;
+    text-transform: uppercase; }
+  .post > .meta {
+    border-top: 1px dashed black;
+    padding-top: 8px; }
+    .post > .meta .author {
+      display: block;
+      color: #444444; }
+    .post > .meta .dateModified {
+      display: block;
+      color: #444444; }
+    .post > .meta .likes {
+      display: block;
+      text-align: right; }
+  .post .marked h1 {
+    font-size: 22px; }
+  .post .marked h2 {
+    font-size: 20px; }
+  .post .marked h3 {
+    font-size: 18px; }
+  .post .marked h4 {
+    font-size: 16px; }
+  .post .marked h5 {
+    font-size: 14px; }
+  .post .marked h6 {
+    font-size: 12px; }

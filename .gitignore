@@ -15,6 +15,3 @@ yarn-error.log*
 
 #ide
 .idea
-
-#built by sass css files
-*.css
