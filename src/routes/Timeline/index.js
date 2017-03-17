@@ -6,8 +6,8 @@ import Post from "../../components/Post";
 import {posts} from "../../store";
 import "./style.css";
 import history from "../../utils/history";
-import { getCookie } from "../../utils/cookie";
-import {sortDateModifiedDesc} from "../../utils/dataHelper";
+import {getCookie} from "../../utils/cookie";
+import Nav from "../../components/Nav";
 
 
 class Timeline extends Component {
@@ -18,22 +18,18 @@ class Timeline extends Component {
         }
 
         this.state = {
-            posts: this.orderPosts(posts)
+            posts
         }
     }
 
     filterPosts = event => {
-      event.preventDefault();
-      const filter = event.target.filter.value;
-      if (filter) {
-          this.setState({posts: this.orderPosts(this.getFilteredPosts(filter))})
-      } else {
-          this.setState({posts: this.orderPosts(posts)});
-      }
-    };
-
-    orderPosts = posts => {
-        return posts;
+        event.preventDefault();
+        const filter = event.target.filter.value;
+        if (filter) {
+            this.setState({posts: this.getFilteredPosts(filter)})
+        } else {
+            this.setState({posts});
+        }
     };
 
     render() {
@@ -42,15 +38,16 @@ class Timeline extends Component {
 
         return (
             <div>
-                <Header />
+                <Header>
+                    <Nav active to={"/profile/" + getCookie("loggedIn")}>Profile</Nav>
+                    <Nav to="/logout">Logout</Nav>
+                    <Nav to="/add">Add Post</Nav>
+                </Header>
                 <Content className="page-timeline">
                     <h1>Timeline</h1>
-                    <form onSubmit={this.filterPosts}>
-                    <label>
-                        <span>filter on title:</span>
+                    <form className="filter" onSubmit={this.filterPosts}>
                         <input type="text" name="filter"/>
                         <input type="submit" value="Seach"/>
-                    </label>
                     </form>
                     {
                         postIds.map(_id => <Post key={_id} data={posts[_id]}/>)

@@ -1,2 +1,4 @@
 .page-timeline {
   padding: 16px; }
+  .page-timeline .filter {
+    text-align: right; }

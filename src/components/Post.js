@@ -35,7 +35,7 @@ class Post extends Component {
         const {comments, likes, color} = this.state;
 
         return (
-            <div className="post" id={_id} style={{"background-color": color}}>
+            <div className="post" id={_id} style={{backgroundColor: color}}>
                 <h2 className="title">{title}</h2>
                 <Markdown data={description}/>
                 <div className="meta">

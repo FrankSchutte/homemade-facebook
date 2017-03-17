@@ -13,10 +13,11 @@ export default [{
     title: "Login",
     mount: "/login",
     component: Login,
+    hidden: true
 },{
     title: "Logout",
     mount: "/logout",
-    component: Logout,
+    component: Logout
 },{
     title: "Profile",
     mount: "/profile/:user",

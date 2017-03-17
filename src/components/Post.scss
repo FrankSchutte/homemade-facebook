@@ -1,11 +1,11 @@
 .post {
-  box-shadow: 0 5px 20px -5px black;
+  box-shadow: 0 5px 20px -5px #444444;
   padding: 16px;
-  margin: 16px 0;
+  margin: 32px 0;
   transition: box-shadow .25s;
 
   &:hover {
-    box-shadow: 0 5px 20px 0 black;
+    box-shadow: 0 5px 20px 0 #444444;
   }
 
   > .title {
