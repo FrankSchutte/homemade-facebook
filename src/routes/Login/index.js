@@ -10,7 +10,7 @@ import "./style.css";
 
 class Login extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         if (getCookie("loggedIn"))
             history.push("/")
     }
@@ -18,7 +18,7 @@ class Login extends Component {
     onLoginAttempt = (user) => {
         if (users[user]) {
             setCookie("loggedIn", user);
-            history.push("/")
+            history.push("/");
         }
     };
 
