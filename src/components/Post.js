@@ -16,9 +16,9 @@ class Post extends Component {
         this.state = {
             comments: this.props.data.comments,
             likes: this.props.data.likes,
-            liked: liked
+            liked: liked,
+            color: 'hsla(' + (Math.random() * 360) + ', 50%, 50%, .5)'
         };
-        this.state.color = 'hsla(' + (Math.random() * 360) + ', 50%, 50%, .5)';
     }
 
     handleNewComment = comment => {
