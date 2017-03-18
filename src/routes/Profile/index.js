@@ -45,12 +45,9 @@ class Profile extends Component {
                 </Header>
                 <Content className="page-page_timeline">
                     <h1>Profile</h1>
-                    <form onSubmit={this.filterPosts}>
-                        <label>
-                            <span>filter on title:</span>
-                            <input type="text" name="filter"/>
-                            <input type="submit" value="Seach"/>
-                        </label>
+                    <form className="filter" onSubmit={this.filterPosts}>
+                        <input type="text" name="filter"/>
+                        <input type="submit" value="Search"/>
                     </form>
                     {
                         postIds.map(_id => <Post key={_id} data={posts[_id]}/>)
