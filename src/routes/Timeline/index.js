@@ -8,7 +8,7 @@ import "./style.css";
 import history from "../../utils/history";
 import {getCookie} from "../../utils/cookie";
 import Nav from "../../components/Nav";
-
+import NewPost from '../../components/NewPost'
 
 class Timeline extends Component {
     constructor(props) {
@@ -33,6 +33,16 @@ class Timeline extends Component {
         }
     };
 
+    handleNewPost = post => {
+        console.log(post);
+        let newPosts = this.state.posts;
+        newPosts[post._id] = post;
+
+        this.setState({
+            posts: newPosts
+        });
+    };
+
     render() {
         const {posts} = this.state;
         const postIds = Object.keys(posts);
@@ -43,7 +53,7 @@ class Timeline extends Component {
                     <Nav active to="/">Timeline</Nav>
                     <Nav to={"/profile/" + getCookie("loggedIn")}>Profile</Nav>
                     <Nav to="/logout">Logout</Nav>
-                    <Nav to="/add">Add Post</Nav>
+                    <Nav to="/add" testProp="test prop value">Add Post</Nav>
                 </Header>
                 <Content className="page-timeline">
                     <h1>Timeline</h1>
@@ -51,9 +61,12 @@ class Timeline extends Component {
                         <input type="text" name="filter"/>
                         <input type="submit" value="Seach"/>
                     </form>
-                    {
-                        postIds.map(_id => <Post key={_id} data={posts[_id]}/>)
-                    }
+                    <div className="posts">
+                        {
+                            postIds.map(_id => <Post key={_id} data={posts[_id]}/>)
+                        }
+                        <NewPost onSubmit={this.handleNewPost}/>
+                    </div>
                 </Content>
                 <Footer />
             </div>
