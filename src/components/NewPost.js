@@ -7,6 +7,7 @@ class NewPost extends React.Component {
         super(props);
 
         this.state = {
+            tmpHash: 0,
             color: 'hsla(' + (Math.random() * 360) + ', 50%, 50%, .5)'
         };
     }
@@ -14,7 +15,7 @@ class NewPost extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         const postObj = {
-            _id: "261asd4",
+            _id: this.state.tmpHash,
             title: e.target.title.value,
             description: e.target.description.value,
             dateModified: Date.now(),
@@ -26,6 +27,7 @@ class NewPost extends React.Component {
 
         if (postObj) {
             this.props.onSubmit(postObj);
+            this.state.tmpHash++;
             e.target.title.value = '';
             e.target.description.value = '';
         }
