@@ -5,33 +5,30 @@ import Content from "../../components/Content";
 import "./style.css";
 import {getCookie} from "../../utils/cookie";
 import Nav from '../../components/Nav'
+import NewPost from '../../components/NewPost'
+import {posts} from "../../store";
+import history from '../../utils/history';
 
 class Add extends Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
-            title: '',
-            description: ''
-        };
+            color: 'hsla(' + (Math.random() * 360) + ', 50%, 50%, .5)'
+        }
     }
 
-    onChangeTitle(e) {
-        this.setState({
-            title: e.target.value
-        });
-    }
-
-    onChangeDescription(e) {
-        this.setState({
-            description: e.target.value
-        });
-    }
+    handleNewPost = post => {
+        posts[post._id] = post;
+        history.push('/');
+    };
 
     render() {
+        const {color} = this.state;
+
         return (
             <div>
-                testProp:{console.log(this.props)}
                 <Header>
                     <Nav to="/">Timeline</Nav>
                     <Nav to={"/profile/" + getCookie("loggedIn")}>Profile</Nav>
@@ -39,20 +36,10 @@ class Add extends Component {
                     <Nav active to="/add">Add Post</Nav>
                 </Header>
                 <Content className="page-add">
-                    <h1>Add Post</h1>
-                    <form>
-                        <label>
-                            Title:
-                            <input type="text"
-                                   onChange={this.onChangeTitle.bind(this)}/>
-                        </label>
-                        <label>
-                            Description:
-                            <input type="text"
-                                   onChange={this.onChangeDescription.bind(this)}/>
-                        </label>
-                        <input type="submit"/>
-                    </form>
+                    <div className="post" style={{backgroundColor: color}}>
+                        <h1>Add Post</h1>
+                        <NewPost onSubmit={this.handleNewPost}/>
+                    </div>
                 </Content>
                 <Footer />
             </div>

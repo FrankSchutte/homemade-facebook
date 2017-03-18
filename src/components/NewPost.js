@@ -7,8 +7,7 @@ class NewPost extends React.Component {
         super(props);
 
         this.state = {
-            tmpHash: 0,
-            color: 'hsla(' + (Math.random() * 360) + ', 50%, 50%, .5)'
+            tmpHash: 0
         };
     }
 
@@ -34,11 +33,8 @@ class NewPost extends React.Component {
     };
 
     render() {
-        const {color} = this.state;
-
         return (
-            <div className="post" style={{backgroundColor: color}}>
-                <h2 className="title">New Post</h2>
+            <div>
                 <form className="newPost" onSubmit={this.handleSubmit}>
                     <label>
                         Post Title:
