@@ -1,4 +1,7 @@
-.page-timeline {
-  padding: 16px; }
-  .page-timeline .filter {
-    text-align: right; }
+.header {
+  position: relative; }
+
+.header .filter {
+  position: absolute;
+  top: 0;
+  right: 16px; }
