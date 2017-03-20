@@ -1,7 +1,6 @@
 .header {
   position: relative; }
-
-.header .filter {
-  position: absolute;
-  top: 0;
-  right: 16px; }
+  .header .filter {
+    position: absolute;
+    top: 0;
+    right: 16px; }
